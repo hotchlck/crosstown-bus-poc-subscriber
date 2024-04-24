@@ -12,3 +12,6 @@
     In this string, the first `guest` refers to the username used for authentication to the broker, while the second `guest` is the password used for the same purpose. 
     The `localhost:5672` part indicates the host address and port used for connection to the AMQP broker.
     Here, `localhost` refers to the local address of the server running on the same machine, and `5672` is the default port number used by the AMQP server. Therefore, this string represents the standard URI format for connection to an AMQP server.
+
+## Simulation slow subscriber
+<img src ="img/spikes.png">
