@@ -19,3 +19,9 @@
    In a slow subscriber simulation, when the `cargo run` command is executed several times in quick succession on the publisher, there is an increase in queued messages.
    This is due to the delay in the subscriber receiving messages from the publisher, simulated through  `thread::sleep`. As a result, messages from the publisher pile up in the queue until the subscriber can receive them.
    This situation differs when execution is performed without sleep. In that case, there is a spike in the queued message graph because the `cargo run` command is executed quickly on the publisher, so the sent messages must be stored in the queue before they can be processed by the subscriber.
+
+## “Reflection and Running at least three subscribers
+<img src = "img/Untitled.png">
+<img src = "img/Screenshot 2024-04-24 172244.png">
+
+   When executing the `cargo run` command, the execution of all sent messages is divided among the three subscribers. Even though it's executed with sleep, no messages enter the queue, as seen from the queued messages graph. This happens because the messages have been processed by three different subscribers, so the messages no longer need to queue up for execution.
